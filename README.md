@@ -21,3 +21,4 @@ rails s
 1) To create note user must login or sign up(if no account present).
 2) User can attach or create tags for each notes. Tags will be create if not present.
 3) User can filter notes by tags.
+# CreateNotesWithTag
