@@ -1,24 +1,7 @@
 <div class="row">
-  <div class="col-8">
+  <div class="col-10">
     <h1 align="center">Listing all notes</h1>
     <%= will_paginate %>
     <%= render 'note', obj: @notes %>
     <%= will_paginate %>
   </div>
-
-  <div class="col-4">
-    <div class="card">
-      <h5 class="card-header">Tags</h5>
-      <div class="card-body">
-        <% Tag.preload(:notes).each do |tag| %>
-          <div class="tag">
-            <%= link_to(notes_tag_path(tag), class: "badge badge-primary") do %>
-              <%= tag.name %> <span class="badge badge-light"><%= tag.notes.size %></span>
-            <% end %>
-            <%= link_to "x", tag_path(tag), method: :delete, class: "tag-close-link" %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
