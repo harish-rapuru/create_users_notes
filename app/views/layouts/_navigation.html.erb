@@ -1,0 +1,26 @@
+<% if logged_in? %>
+  <nav class="navbar navbar-expand-sm navbar-dark " style="background-color: #11bcde;">
+    <ul class="navbar-nav" style="margin-left: 3%; width: 100%;">
+      <li class="nav-item active" >
+       <%= link_to "Notes",notes_path, class: "nav-link"  %>
+      </li>
+      <li class="nav-item active" >
+        <%= link_to "New Notes", new_note_path, class: "nav-link"%>
+      </li>
+      <li class="nav-item nav-right" style="right: 3px;">
+        <%= link_to "Logout", logout_path, method: :delete, class: "nav-link"%>
+      </li>
+    </ul>
+  </nav>
+  <% else %>
+  <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #11bcde;">
+    <ul class="navbar-nav" style="margin-left: 3%; width: 100%;">
+     <li class="nav-item nav-right" style="right: 70px;">
+        <%= link_to "SignUp", signup_path, class: "nav-link"%>
+      </li>
+      <li class="nav-item nav-right" style="right: 5px;">
+        <%= link_to "SignIn", login_path, class: "nav-link" %>
+      </li>
+    </ul>
+  </nav>
+<% end %>

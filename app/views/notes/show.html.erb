@@ -1,0 +1,28 @@
+<h2 align="center">Title: <%= @note.title %></h2>
+<h5 class="card-header">
+  <small>Created by: <%= @note.user.name%>,
+    <%= time_ago_in_words(@note.created_at) %> ago,
+    last updated: <%= time_ago_in_words(@note.updated_at) %> ago</small>
+</h5>
+<div class="well col-xs-8 col-xs-offset-2">
+  <h4 class="center description"><strong>Description:</strong></h4>
+  <hr>
+  <%= simple_format(@note.description) %>
+  <% if @note.tags.any? %>
+    <p>
+      Tags:
+      <% @note.tags.each do |tag| %>
+        <span class="badge badge-dark"><%= tag.name %></span>
+      <% end %>
+    </p>
+  <% end %>
+  <div class="note-actions">
+    <% if logged_in? && (current_user == @note.user) %>
+      <%= link_to "Edit this note", edit_note_path(@note), class: "btn btn-xs btn-primary" %>
+      <%= link_to "Delete this note", note_path(@note), method: :delete,
+                                        data: { confirm: "Are you sure you want to delete the note?"},
+                                        class: "btn btn-xs btn-danger" %>
+    <% end %>
+    <%= link_to "View all note", notes_path, class: "btn btn-xs btn-success" %>
+  </div>
+</div>

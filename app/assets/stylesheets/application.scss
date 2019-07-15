@@ -1,0 +1,69 @@
+@import "bootstrap";
+@import "select2";
+@import "select2-bootstrap";
+@import "trix";
+
+.center {
+  text-align: center;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.note-meta-details {
+  border-top: 1px solid #eaeaea;
+  margin-top: 15px;
+}
+
+.note-actions {
+  border-top: 1px solid #eaeaea;
+  padding-top: 5px;
+}
+
+.description {
+  margin-top: 0;
+}
+
+.note-title {
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.note-body {
+  border-top: 1px solid #eaeaea;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.trix-content {
+  max-height: 500px !important;
+  overflow-y: auto;
+}
+
+.tag {
+  display: flex;
+  margin-bottom: 10px;
+
+  &:hover .tag-close-link {
+    display: block;
+  }
+}
+
+.tag-close-link {
+  margin-left: 10px;
+  line-height: 1.3;
+  color: red;
+  display: none;
+}
+.navbar-nav{
+  height: 35px;
+}
+.nav-right{
+  position: absolute;
+  top:0; right:0;
+}
